@@ -36,7 +36,7 @@ app.post('/ai-chatbot', async (req, res) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${chatBotApi}`,
+        Authorization: `Bearer ${process.env.chatBotApi}`,
         'User-Agent': 'Chrome',
       },
       body: JSON.stringify({
@@ -71,7 +71,7 @@ app.post('/ai-chatbot', async (req, res) => {
 
 // Get API key endpoint
 app.get('/get-api-key', (req, res) => {
-  res.json({ apiKey: imageAnalyzerApi });
+  res.json({ apiKey: process.env.imageAnalyzerApi });
 });
 
 // Image Analyzer endpoint
@@ -98,7 +98,7 @@ app.post('/image-analyzer', async (req, res) => {``
       method: 'POST',
       headers: {
         'Content-Type': 'application/json', 
-        Authorization: `Bearer ${apiKeyData.apiKey}`, 
+        Authorization: `Bearer ${process.env.imageAnalyzerApi}`, 
         'User-Agent': 'Chrome',
       },
       body: JSON.stringify({
@@ -149,7 +149,7 @@ app.post('/generate-image', async (req, res) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${imageGeneratorApi}`, 
+        Authorization: `Bearer ${process.env.imageGeneratorApi}`, 
         'User-Agent': 'Chrome',
       },
       body: JSON.stringify({

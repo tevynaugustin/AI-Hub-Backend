@@ -8,7 +8,7 @@ const cors = require('cors');
 
 // CORS configuration
 const corsOptions = {
-  origin: ['http://opticaihub.co.uk'], 
+  origin: ['http://opticaihub.co.uk/'], 
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
   optionsSuccessStatus: 204,

@@ -80,7 +80,7 @@ app.options('/image-analyzer', cors(corsOptions));
 app.post('/image-analyzer', async (req, res) => {``
   try {
     // Fetch API key
-    const apiKeyResponse = await fetch('http://localhost:5000/get-api-key');
+    const apiKeyResponse = await fetch('https://ai-hub-backend-production.up.railway.app/get-api-key');
     const apiKeyData = await apiKeyResponse.json();
 
     console.log('Fetched API Key:', apiKeyData.apiKey);
